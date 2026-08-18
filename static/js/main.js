@@ -41,7 +41,7 @@ function updateNormalRanges(gender) {
 }
 
 
-// Blood report submission and predicting the results from the ML model using Flask API
+// Submit values to the Flask API.
 function submitBloodReport() {
     const age = document.getElementById('age').value;
     const gender = document.querySelector('input[name="gender"]:checked').value;
@@ -123,7 +123,7 @@ function loadReportResults() {
     // Display results
     displayResults(reportData.analysis);
     displayPredictions(reportData.ml_predictions);
-    displayRecommendations(reportData.recommendations);
+    displayRecommendations(reportData.notes);
 }
 
 function displayResults(analysis) {
@@ -193,7 +193,7 @@ function displayAbnormalities(analysis) {
     }
 }
 
-// Display ML predictions along with accuracy percentage
+// Display experimental model output.
 function displayPredictions(ml_predictions) {
     const predictionsList = document.getElementById('predictions-list');
     predictionsList.innerHTML = '';
@@ -214,7 +214,7 @@ function displayPredictions(ml_predictions) {
 }
 
 
-// Display Rule based recommendations based on analysis results
+// Display educational notes returned by the API.
 function displayRecommendations(recommendations) {
     const recommendationsContent = document.getElementById('recommendations-content');
     recommendationsContent.innerHTML = '';
@@ -260,7 +260,7 @@ function generatePDF() {
     
     // Add title
     doc.setFontSize(20);
-    doc.text('Blood Report Analysis', 105, 20, { align: 'center' });
+    doc.text('Blood Test Value Analysis', 105, 20, { align: 'center' });
     
     // Add date
     doc.setFontSize(12);
@@ -300,7 +300,7 @@ function generatePDF() {
     
     // Predictions
     doc.setFontSize(14);
-    doc.text('ML Predictions:', 20, y + 10);
+    doc.text('Experimental Model Output:', 20, y + 10);
     y += 20;
     doc.setFontSize(12);
     
@@ -314,11 +314,11 @@ function generatePDF() {
 
     // Recommendations
     doc.setFontSize(14);
-    doc.text('Recommendations:', 20, y + 10);
+    doc.text('Educational Notes:', 20, y + 10);
     y += 20;
     doc.setFontSize(12);
     
-    reportData.recommendations.forEach(rec => {
+    reportData.notes.forEach(rec => {
         doc.setFont('helvetica', 'bold');
         doc.text(rec.title, 20, y);
         doc.setFont('helvetica', 'normal');
@@ -348,7 +348,7 @@ function generatePDF() {
     doc.setFontSize(10);
     doc.setTextColor(100);
     doc.text('Note: This report is generated automatically and should not replace professional medical advice.', 105, 280, { align: 'center' });
-    doc.text('Consult your healthcare provider for proper diagnosis and treatment.', 105, 285, { align: 'center' });
+    doc.text('This portfolio demo is not intended for clinical use.', 105, 285, { align: 'center' });
     
     // Save the PDF
     doc.save('blood_report_analysis.pdf');

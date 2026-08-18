@@ -10,7 +10,7 @@
 <body>
     <header class="navbar">
         <div class="container">
-            <h1 class="logo">Blood Report Analyzer</h1>
+            <h1 class="logo">Blood Report ML Analyzer</h1>
             <nav>
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -21,13 +21,14 @@
     </header>
 
     <main class="container">
-        <h1 class="page-title">Enter Your Blood Report</h1>
+        <h1 class="page-title">Enter Test Values</h1>
+        <p class="note-box">Use synthetic or example values only. This portfolio demo is not intended for real medical decision-making.</p>
         
         <div id="error-message" class="error-message" style="display: none;"></div>
         
         <form id="blood-report-form">
             <div class="form-group">
-                <label>Gender</label>
+                <label>Sex</label>
                 <div class="radio-group">
                     <label class="radio-label">
                         <input type="radio" name="gender" value="male" checked> Male
@@ -39,8 +40,8 @@
             </div>
             
             <div class="form-group">
-                <label for="age">Age (Should be greater than or equal to 18)</label>
-                <input type="number" id="age" name="age" required min="18" max="120" required>
+                <label for="age">Age (18–120)</label>
+                <input type="number" id="age" name="age" required min="18" max="120">
             </div>
             
             <h2 class="section-title">Blood Test Results</h2>
@@ -74,7 +75,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Blood Report Analyzer. All rights reserved.</p>
+            <p>&copy; 2026 Chaithanya Vemuri</p>
         </div>
     </footer>
 
