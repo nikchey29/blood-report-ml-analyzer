@@ -21,6 +21,11 @@ Flask API
      v
 results page
 ```
+## Application Preview
+
+The Flask interface accepts structured blood-test values, compares them with the project reference ranges, and displays the experimental model output alongside educational notes.
+
+![Blood Report ML Analyzer results](docs/assets/app-results.png)
 
 ## Stack
 
