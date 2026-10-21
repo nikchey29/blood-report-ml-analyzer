@@ -1,8 +1,8 @@
 # Blood Report ML Analyzer
 
-This is a small end-to-end machine-learning project I built to explore how structured blood-test values can be processed in a web application. The app combines simple reference-range checks with a multi-label Random Forest model and serves the result through Flask.
+I built this small Flask application to learn how an ML model fits into an actual user workflow: form validation, preprocessing, inference and a readable results page. It takes structured blood-test inputs, compares them with reference ranges and runs a multi-label Random Forest classifier.
 
-The project uses synthetic data. It is a portfolio and learning project, not a clinical system, and its output should not be used for diagnosis or treatment decisions.
+**Important:** the data and labels are synthetic. Some labels come from the same hand-written rules used to generate the training examples, so the reported model accuracy is **not a clinical performance measure**. This is an educational software/ML prototype, not a diagnostic tool.
 
 ## What the project does
 
